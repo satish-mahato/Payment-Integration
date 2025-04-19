@@ -1,5 +1,5 @@
 const express = require("express");
-const { PORT } = require("./config/serverConfig");
+const { PORT } = require("./config/serverConfig.js");
 const apiRoutes = require("./routes/apiRoutes.js");
 const app = express();
 app.use(express.json());

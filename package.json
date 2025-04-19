@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "dev": "npx nodemon src/server.js"
+    "dev": "npx nodemon src/server.js",
+    "create": "npx prisma migrate dev"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,7 @@
     "@prisma/client": "^6.6.0",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "prisma": "^6.6.0"
+    "prisma": "^6.6.0",
+    "zod": "^3.24.3"
   }
 }

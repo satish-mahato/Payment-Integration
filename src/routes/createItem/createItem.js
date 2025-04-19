@@ -1,8 +1,7 @@
 const { Router } = require("express");
+const validateRequest = require("../../validator/validation");
+const { itemsSchema } = require("../../schema/itemschema");
+const { createItem } = require("../../controllers/item.controller.js");
 const router = Router();
-router.get("/", (req, res) => {
-  res.json({
-    msg: "api create Routes",
-  });
-});
+router.post("/", validateRequest(itemsSchema), createItem);
 module.exports = router;

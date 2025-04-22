@@ -1,0 +1,27 @@
+
+generator client {
+  provider = "prisma-client-js"
+ 
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+model item {
+  id Int @id @default(autoincrement())
+  itemName String
+  totalPrice  Int
+
+}
+model PurchasedItem {
+  id            String    @id @default(uuid())
+  totalPrice    Int
+  paymentMethod String
+  status        String    @default("pending")
+  createdAt     DateTime  @default(now())
+  transactionId String    @unique
+  decodedData   Json?     
+  
+  @@map("purchased_items")
+}
